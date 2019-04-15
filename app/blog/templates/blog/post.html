@@ -1,0 +1,13 @@
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<form method="post" class="post">
+	{%csrf_token%}
+	{{form.text }}
+	<button type="submit" class="post"> Public post</button>
+	<ul>
+	{%for post in posts%}
+	<li> {{post.date_pub}} {{post.text}} </li>
+	{%endfor%}
+	</ul>
+</form>
